@@ -11,12 +11,17 @@
     "url": "git+https://github.com/hackycy/uni-axios-adapter.git"
   },
   "keywords": [
-    "axios"
+    "axios",
+    "uni-app",
+    "adapter"
   ],
   "author": "hackycy",
   "license": "MIT",
   "bugs": {
     "url": "https://github.com/hackycy/uni-axios-adapter/issues"
   },
-  "homepage": "https://github.com/hackycy/uni-axios-adapter#readme"
+  "homepage": "https://github.com/hackycy/uni-axios-adapter#readme",
+  "devDependencies": {
+    "webpack": "^5.4.0"
+  }
 }
