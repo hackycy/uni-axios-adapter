@@ -1,44 +1,31 @@
-var webpack = require('webpack');
-var config = {};
+const webpack = require("webpack");
+const UglifyJsPlugin = require("uglifyjs-webpack-plugin");
+const path = require("path");
+
+const config = [];
 
 function generateConfig(name) {
-  var uglify = name.indexOf('min') > -1;
+  var uglify = name.indexOf("min") > -1;
   var config = {
-    entry: './index.js',
+    entry: "./index.js",
     output: {
-      path: 'dist/',
-      filename: name + '.js',
-      sourceMapFilename: name + '.map',
-      library: 'uni-axios-adapter',
-      libraryTarget: 'umd'
+      path: path.resolve(__dirname, "dist"),
+      filename: name + ".js",
+      sourceMapFilename: name + ".map",
+      library: "uni-axios-adapter",
+      libraryTarget: "umd",
     },
-    node: {
-      process: false
+    optimization: {
+      minimize: uglify,
     },
-    devtool: 'source-map'
+    devtool: "source-map",
   };
-
-  config.plugins = [
-    new webpack.DefinePlugin({
-      'process.env.NODE_ENV': JSON.stringify(process.env.NODE_ENV)
-    })
-  ];
-
-  if (uglify) {
-    config.plugins.push(
-      new webpack.optimize.UglifyJsPlugin({
-        compressor: {
-          warnings: false
-        }
-      })
-    );
-  }
 
   return config;
 }
 
-['uni-axios-adapter', 'uni-axios-adapter.min'].forEach(function (key) {
-  config[key] = generateConfig(key);
+["uni-axios-adapter", "uni-axios-adapter.min"].forEach(function (key) {
+  config.push(generateConfig(key));
 });
 
 module.exports = config;
