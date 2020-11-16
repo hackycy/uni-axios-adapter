@@ -1,0 +1,22 @@
+{
+  "name": "uni-axios-adapter",
+  "version": "0.0.1",
+  "description": "uni-app axios adapter",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/hackycy/uni-axios-adapter.git"
+  },
+  "keywords": [
+    "axios"
+  ],
+  "author": "hackycy",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/hackycy/uni-axios-adapter/issues"
+  },
+  "homepage": "https://github.com/hackycy/uni-axios-adapter#readme"
+}
